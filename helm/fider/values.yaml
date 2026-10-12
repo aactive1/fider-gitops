@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: 796951668371.dkr.ecr.us-east-1.amazonaws.com/fider-app
+  tag: ""
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3000
