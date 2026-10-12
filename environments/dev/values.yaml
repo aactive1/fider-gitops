@@ -1,0 +1,8 @@
+replicaCount: 1
+
+image:
+  tag: "" 
+
+service:
+  type: ClusterIP
+  port: 3000
