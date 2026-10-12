@@ -6,3 +6,9 @@ image:
 service:
   type: ClusterIP
   port: 3000
+
+
+database:
+  host: terraform-46da1e8aa71da437c95fe80f90.cw342ceiemz4.us-east-1.rds.amazonaws.com
+  port: 5432
+  name: fiderdb
