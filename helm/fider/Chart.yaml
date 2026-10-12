@@ -1,0 +1,6 @@
+apiVersion: v2
+name: fider
+description: Helm chart for deploying Fider on EKS
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
