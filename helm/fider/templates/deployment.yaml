@@ -18,3 +18,15 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 3000
+              env:
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: fider-db-credentials
+                  key: username
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: fider-db-credentials
+                  key: password
