@@ -30,3 +30,8 @@ spec:
                 secretKeyRef:
                   name: fider-db-credentials
                   key: password
+
+            - name: DATABASE_URL
+              value: "postgres://$(DB_USER):$(DB_PASSWORD)@{{ .Values.database.host }}:{{ .Values.database.port }}/{{ .Values.database.name }}?sslmode=require"
+
+      
