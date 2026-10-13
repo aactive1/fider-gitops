@@ -34,4 +34,20 @@ spec:
             - name: DATABASE_URL
               value: "postgres://$(DB_USER):$(DB_PASSWORD)@{{ .Values.database.host }}:{{ .Values.database.port }}/{{ .Values.database.name }}?sslmode=require"
 
-      
+          startupProbe:
+           tcpSocket:
+            port: 3000
+          periodSeconds: 5
+          failureThreshold: 24
+
+          readinessProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 10
+            failureThreshold: 3
+
+          livenessProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 20
+            failureThreshold: 3
