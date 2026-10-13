@@ -18,7 +18,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 3000
-              env:
+          env:
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
@@ -32,6 +32,52 @@ spec:
                   key: password
 
             - name: DATABASE_URL
-              value: "postgres://$(DB_USER):$(DB_PASSWORD)@{{ .Values.database.host }}:{{ .Values.database.port }}/{{ .Values.database.name }}?sslmode=require"
+              valueFrom:
+                secretKeyRef:
+                  name: fider-db-credentials
+                  key: DATABASE_URL
+          
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: fider-db-credentials
+                  key: JWT_SECRET
 
-      
+            - name: EMAIL_NOREPLY
+              value: "noreply@example.com"
+
+            - name: BASE_URL
+              value: "http://localhost:3000"
+
+            - name: GO_ENV
+              value: "production"
+            
+            - name: LOG_CONSOLE
+              value: "true"
+
+            - name: LOG_LEVEL
+              value: "INFO"
+
+            - name: EMAIL_SMTP_HOST
+              value: "mailhog"
+
+            - name: EMAIL_SMTP_PORT
+              value: "1025"
+       
+          startupProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 5
+            failureThreshold: 24
+
+          readinessProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 10
+            failureThreshold: 3
+
+          livenessProbe:
+            tcpSocket:
+              port: 3000
+            periodSeconds: 20
+            failureThreshold: 3

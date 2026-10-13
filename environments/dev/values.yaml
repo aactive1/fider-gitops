@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  tag: "" 
+  tag: "4b5550aa35ea3e12ecbd2f4c574974b3e022a16f" 
 
 service:
   type: ClusterIP
@@ -9,6 +9,6 @@ service:
 
 
 database:
-  host: terraform-46da1e8aa71da437c95fe80f90.cw342ceiemz4.us-east-1.rds.amazonaws.com
+  host: terraform-e54ade3c0ff6f1558f1b53a7d6.cw342ceiemz4.us-east-1.rds.amazonaws.com
   port: 5432
   name: fiderdb
