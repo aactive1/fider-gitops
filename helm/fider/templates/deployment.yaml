@@ -47,7 +47,7 @@ spec:
               value: "noreply@example.com"
 
             - name: BASE_URL
-              value: "http://localhost:3000"
+              value: "https://dev.aainfo.xyz"
 
             - name: GO_ENV
               value: "production"

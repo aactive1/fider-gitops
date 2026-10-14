@@ -1,6 +1,6 @@
 clusterName: fider-eks
 region: us-east-1
-vpcID: vpc-054cd7903d9c823e9
+vpcId: vpc-054cd7903d9c823e9
 
 serviceAccount:
   create: true
