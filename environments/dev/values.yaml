@@ -9,6 +9,6 @@ service:
 
 
 database:
-  host: terraform-f7205b9466eba8bdc23aa0a611.cw342ceiemz4.us-east-1.rds.amazonaws.com
+  host: terraform-4cebdec11746564412a822f3d9.cw342ceiemz4.us-east-1.rds.amazonaws.com
   port: 5432
   name: fiderdb
