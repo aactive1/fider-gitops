@@ -7,8 +7,5 @@ service:
   type: ClusterIP
   port: 3000
 
-
-database:
-  host: terraform-4cebdec11746564412a822f3d9.cw342ceiemz4.us-east-1.rds.amazonaws.com
-  port: 5432
-  name: fiderdb
+ingress:
+  host: dev.aainfo.xyz

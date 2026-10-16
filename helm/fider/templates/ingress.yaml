@@ -15,7 +15,7 @@ spec:
   ingressClassName: alb
 
   rules:
-    - host: dev.aainfo.xyz
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /

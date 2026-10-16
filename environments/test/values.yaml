@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  tag: "4b5550aa35ea3e12ecbd2f4c574974b3e022a16f"
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  host: test.aainfo.xyz

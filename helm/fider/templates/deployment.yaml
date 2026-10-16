@@ -51,7 +51,7 @@ spec:
               value: "noreply@example.com"
 
             - name: BASE_URL
-              value: "https://dev.aainfo.xyz"
+              value: "https://{{ .Values.ingress.host }}"
 
             - name: GO_ENV
               value: "production"
