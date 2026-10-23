@@ -35,7 +35,7 @@ Update image tag in fider-gitops
 
 The `dev` environment uses automatic Argo CD synchronization and self-healing.
 
-The `test` and `prod` environments use manual synchronization, allowing the same tested container image to be promoted between environments.
+The `test` and `prod` environments use manual synchronisation, allowing the same tested container image to be promoted between environments.
 
 ## Repository structure
 
