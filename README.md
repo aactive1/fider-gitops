@@ -73,7 +73,7 @@ A custom Prometheus alert detects when the development Fider Deployment has no a
 
 ## Deployment instructions
 
-See the **[Deployment Runbook](docs/RUNBOOK.md)** for the full setup process, including Helm installations, AWS Secrets Manager configuration, Argo CD and Prometheus.
+See the **[Deployment Runbook](docs/runbook.md)** for the full setup process, including Helm installations, AWS Secrets Manager configuration, Argo CD and Prometheus.
 
 ## Related repositories
 
