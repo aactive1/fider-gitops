@@ -1,0 +1,20 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: fider-alerts
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: fider.rules
+      rules:
+        - alert: FiderDevUnavailable
+          expr: |
+            kube_deployment_status_replicas_available{namespace="dev",deployment="fider"} == 0
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Fider development deployment unavailable"
+            description: "Fider has fewer available replicas than desired."
